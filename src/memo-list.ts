@@ -1,19 +1,15 @@
 import { Memo } from './memo';
 
 export const MEMOS: Memo[] = [
-  { userName: 'Anne Marie', content: 'Hi, my name is Marie', created: Date.now() },
-  { userName: 'gngsn', content: 'Hi, my name is gngsn', created: Date.now() },
-  { userName: 'Jinsuu', content: 'Im so tired', created: Date.now() },
-  { userName: 'Doctor Who', content: 'doctor....who!', created: Date.now() },
-  { userName: 'sherlock', content: 'think, think,think...', created: Date.now() },
-  { userName: 'Anne Marie', content: 'Hi, my name is Marie', created: Date.now() },
-  { userName: 'gngsn', content: 'Hi, my name is gngsn', created: Date.now() },
-  { userName: 'Jinsuu', content: 'Im so tired', created: Date.now() },
-  { userName: 'Doctor Who', content: 'doctor....who!', created: Date.now() },
-  { userName: 'sherlock', content: 'think, think,think...', created: Date.now() },
-  { userName: 'Anne Marie', content: 'Hi, my name is Marie', created: Date.now() },
-  { userName: 'gngsn', content: 'Hi, my name is gngsn', created: Date.now() },
-  { userName: 'Jinsuu', content: 'Im so tired', created: Date.now() },
-  { userName: 'Doctor Who', content: 'doctor....who!', created: Date.now() },
-  { userName: 'sherlock', content: 'think, think,think...', created: Date.now() }
+  { id: 0, userName: 'Anne Marie', content: 'Hi, my name is Marie', created: Date.now() },
+  { id: 1, userName: 'gngsn', content: 'Hi, my name is gngsn', created: Date.now() },
+  { id: 2, userName: 'Jinsuu', content: 'Im so tired', created: Date.now() },
+  { id: 3, userName: 'Doctor Who', content: 'doctor....who!', created: Date.now() },
+  { id: 4, userName: 'sherlock', content: 'think, think,think...', created: Date.now() },
+  { id: 5, userName: 'Anne Marie', content: 'Hi, my name is Marie', created: Date.now() },
+  { id: 6, userName: 'gngsn', content: 'Hi, my name is gngsn', created: Date.now() },
+  { id: 7, userName: 'Anne Marie', content: 'Hi, my name is Marie', created: Date.now() },
+  { id: 8, userName: 'gngsn', content: 'Hi, my name is gngsn', created: Date.now() },
+  { id: 9, userName: 'Jinsuu', content: 'Im so tired', created: Date.now() },
+  { id: 10, userName: 'Doctor Who', content: 'doctor....who!', created: Date.now() },
 ];

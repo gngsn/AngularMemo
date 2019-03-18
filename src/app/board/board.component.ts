@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Memo} from '../../memo';
 import {MEMOS} from '../../memo-list';
+import {MemoService} from '../memo.service';
 
 @Component({
   selector: 'app-board',
@@ -9,11 +10,20 @@ import {MEMOS} from '../../memo-list';
 })
 export class BoardComponent implements OnInit {
   memos = MEMOS;
+  memoId: number;
 
-  constructor() {
+  constructor(private memoService: MemoService ) {
   }
 
   ngOnInit() {
+  }
+
+  onRemove(id: number): void {
+    this.memoService.onRemove(id);
+  }
+
+  onToggle(id: number): void {
+    this.memoService.onToggle(id);
   }
 
 }
