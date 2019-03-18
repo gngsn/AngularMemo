@@ -1,0 +1,19 @@
+.memo {
+  padding : 10px;
+  background-color: #ffe744;
+  /*height: 100px;*/
+  width: 150px;
+  /*font-family: Cambria, Georgia;*/
+  justify-items: center;
+  flex: 1;
+}
+
+.board {
+  flex: 1;
+  padding: 10px;
+  flex-direction: row;
+}
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
