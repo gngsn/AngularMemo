@@ -1,11 +1,11 @@
 <div class="board">
-  <li class="li" *ngFor="let memo of memos">
-    <div class="memo">
-      <h4>{{memo.userName }} 님의 글</h4>
-      <div>
-        <p> {{memo.content}}</p>
+    <div *ngFor="let memo of memos">
+      <div class="memo">
+        <div class="from"><p>{{memo.userName }} 님의 글 </p><small>created at {{memo.created| date }}</small></div>
+        <div>
+          <p> {{memo.content}}</p>
+        </div>
+
       </div>
-      <h6> created at {{memo.created| date }} </h6>
     </div>
-  </li>
 </div>

@@ -1,21 +1,29 @@
 
 .board {
-  border: solid;
-  border-color: black;
   display: flex;
-  flex-direction: row;
-  overflow-x: hidden;
-  overflow-y: auto;
-  width: 1000px
+  flex-direction: column-reverse;
+  justify-items: center;
+
 }
 
 .memo {
   display: flex;
   flex-direction: column;
-  background-color: #ffe744;
-  width: 200px;
+  border-bottom: 1px rgba(128, 128, 128, 0.32) solid;
   padding: 10px;
-  margin: 15px;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 1rem;
+}
+
+small {
+  margin: auto;
+  margin-left: 1rem;
+}
+
+.from{
+  display: flex;
+  flex-direction: row;
 }
 
 .li {
