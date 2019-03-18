@@ -1,19 +1,28 @@
-.memo {
-  padding : 10px;
-  background-color: #ffe744;
-  /*height: 100px;*/
-  width: 150px;
-  /*font-family: Cambria, Georgia;*/
-  justify-items: center;
-  flex: 1;
-}
 
 .board {
-  flex: 1;
-  padding: 10px;
+  border: solid;
+  border-color: black;
+  display: flex;
   flex-direction: row;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 1000px
 }
-/* everywhere else */
+
+.memo {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffe744;
+  width: 200px;
+  padding: 10px;
+  margin: 15px;
+}
+
+.li {
+  list-style: none;
+}
+
+
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
