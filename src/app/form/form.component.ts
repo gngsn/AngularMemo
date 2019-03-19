@@ -15,7 +15,10 @@ export class FormComponent implements OnInit {
   }
   onCreate(input: string ): void {
      this.memoService.onCreate(this.inputMemo);
+<<<<<<< HEAD
      this.inputMemo = '';
+=======
+>>>>>>> db3947d67c69e05500a00aa678b43c905a38eb0c
   }
 
 }
