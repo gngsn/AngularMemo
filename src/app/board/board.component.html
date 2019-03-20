@@ -1,16 +1,24 @@
-<div class="board">
-  <div *ngFor="let memo of memos">
-    <div [class.selected]="memo.userName === userName" class="container">
+<div class="frame">
+  <h1 class="title">{{title}}</h1>
 
-      <div class="memo">
-        <div class="form">
-          <p>{{memo.userName }} 님의 글 </p>
-          <small> {{memo.created| date:'short' }}</small>
+  <app-form></app-form>
+
+  <div class="board">
+    <div *ngFor="let memo of memos">
+      <div [@myMemo]="isClick ? 'final' :'initial'" class="container">
+        <button (click)="isClick = !isClick">click!</button>
+        <div class="memo">
+          <div class="form">
+            <p>{{memo.userName }} 님의 글 </p>
+            <small> {{memo.created | date:'short' }}</small>
+          </div>
+          <p> {{memo.content}}</p>
         </div>
-        <p> {{memo.content}}</p>
+        <p class="edit" (click)="onToggle(memo.id)">✎</p>
+        <p class="remove" (click)="onRemove(memo)">✘</p>
       </div>
-      <p class="edit" (click)="onToggle(memo.id)">✎</p>
-      <p class="remove"  (click)="onRemove(memo.id)">✘</p>
+
     </div>
   </div>
 </div>
+
