@@ -1,3 +1,6 @@
+.selected {
+  background-color: #ffe7c1;
+}
 
 .board {
   display: flex;

@@ -10,8 +10,7 @@ import {MemoService} from '../memo.service';
 })
 export class BoardComponent implements OnInit {
   memos = MEMOS;
-  memoId: number;
-
+  userName = 'user1';
   constructor(private memoService: MemoService ) {
   }
 
@@ -19,7 +18,8 @@ export class BoardComponent implements OnInit {
   }
 
   onRemove(id: number): void {
-    this.memoService.onRemove(id);
+    let idx = this.memos.id.indexOf(id);
+
   }
 
   onToggle(id: number): void {
