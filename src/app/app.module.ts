@@ -8,12 +8,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormComponent } from './form/form.component';
 import { AppRoutingModule } from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MemoComponent } from './memo/memo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BoardComponent,
-    FormComponent
+    FormComponent,
+    MemoComponent
   ],
   imports: [
     BrowserModule,

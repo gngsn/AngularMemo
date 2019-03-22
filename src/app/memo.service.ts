@@ -3,6 +3,7 @@ import {MEMOS} from '../memo-list';
 
 import {Observable, of} from 'rxjs';
 import {Memo} from '../memo';
+import { MemoComponent } from './memo/memo.component';
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +17,12 @@ export class MemoService {
     return of(MEMOS);
   }
 
-  onCreate(input: string): void {
+  onCreate(input: string): Observable<number> {
+    const newId = Number(this.lastId++);
     MEMOS.push(
-      { id: Number(this.lastId++), userName: 'user1', content: input, created: Date.now() }
+      { id: newId, userName: 'user1', content: input, created: Date.now() }
     );
+    return of(newId);
   }
 
   onToggle(id: number): void {

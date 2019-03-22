@@ -1,0 +1,18 @@
+<div class="board">
+
+  <div *ngFor="let memo of memos" class="container">
+    {{ newId === memo.id ? isCreate(true) : isCreate(false) }}
+    <ng-container [@createMemo]="animateMemo?'initial':'final'">
+      <!--<button (click)="isClick = !isClick">click!</button>-->
+      <div class="memo">
+        <div class="form">
+          <p>{{memo.userName }} 님의 글 </p>
+          <small> {{memo.created | date:'short' }}</small>
+        </div>
+        <p> {{memo.content}}</p>
+      </div>
+      <p class="edit" (click)="onToggle(memo.id)">✎</p>
+      <p class="remove" (click)="onRemove(memo)">✘</p>
+    </ng-container>
+  </div>
+</div>

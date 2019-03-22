@@ -1,22 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {Memo} from '../../memo';
 import {MemoService} from '../memo.service';
-// import { MatSnackBar, MatSnackBarModule, MatCardModule  } from '@angular/material';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-  // ...
-} from '@angular/animations';
+import {animate, state, style, transition, trigger} from "@angular/animations";
 
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css'],
-  animations: [
+  animations : [
     trigger('myMemo', [
       state('initial', style({
         backgroundColor: 'white',
@@ -30,31 +22,14 @@ import {
   ],
 })
 export class BoardComponent implements OnInit {
-  isClick = false;
   title = 'AngularMemo';
-  memos: Memo[];
-  userName = 'user1';
-
-  constructor(private memoService: MemoService) {
+  newId: number;
+  constructor() {
   }
 
   ngOnInit() {
-    this.getMemos();
   }
-
-  getMemos(): void {
-    this.memoService
-      .getMemos()
-      .subscribe(memos => this.memos = memos);
+  isCreate(newId: number): void {
+    this.newId = newId;
   }
-
-  onRemove(selectedMemo: Memo): void {
-    // this.memos = this.memoService.onRemove();
-    // let idx = this.memos.indexOf(id);
-  }
-
-  onToggle(id: number): void {
-    this.memoService.onToggle(id);
-  }
-
 }
