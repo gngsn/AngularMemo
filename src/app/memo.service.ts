@@ -3,7 +3,6 @@ import {MEMOS} from '../memo-list';
 
 import {Observable, of} from 'rxjs';
 import {Memo} from '../memo';
-import { MemoComponent } from './memo/memo.component';
 
 @Injectable({
   providedIn: 'root'

@@ -32,10 +32,6 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class MemoComponent implements OnInit {
   memos: Memo[];
-  userName = 'user1';
-  isClick = false;
-  @Input() newId: number;
-  animateMemo = false;
   constructor(private memoService: MemoService) { }
 
   ngOnInit() {
@@ -46,16 +42,13 @@ export class MemoComponent implements OnInit {
       .getMemos()
       .subscribe(memos => this.memos = memos);
   }
-  onRemove(selectedMemo: Memo): void {
+  onRemove(selectedMemo: number): void {
     // this.memos = this.memoService.onRemove();
     // let idx = this.memos.indexOf(id);
   }
 
   onToggle(id: number): void {
     this.memoService.onToggle(id);
-  }
-  isCreate(tof: boolean): void {
-    this.animateMemo = tof;
   }
 
 }
