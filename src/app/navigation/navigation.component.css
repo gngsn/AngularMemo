@@ -1,0 +1,33 @@
+.nav-container {
+  padding: 2rem;
+  border: silver 1px;
+  background-color: #161616;
+  height: 100%;
+}
+
+.nav-title {
+  font-family: "NanumSquareOTF ExtraBold";
+  font-size: 3rem;
+  color: aliceblue;
+  text-align: center;
+}
+
+.nav-sub-title {
+  font-family: "NanumSquareOTF ExtraBold";
+  font-size: 1rem;
+  color: aliceblue;
+  text-align: center;
+}
+
+.nav-list-container {
+
+}
+
+.nav-list {
+  font-family: NanumSquareOTF;
+  font-size: 1rem;
+  color: aliceblue;
+  text-align: center;
+  border-top: 1px solid rgba(240, 248, 255, 0.53);
+  padding: 2rem;
+}

@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
+import { MatNativeDateModule, MatSidenavModule, MatListModule, MatToolbarModule } from '@angular/material';
+
 
 import { AppComponent } from './app.component';
 import { BoardComponent } from './board/board.component';
@@ -9,13 +11,15 @@ import { FormComponent } from './form/form.component';
 import { AppRoutingModule } from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MemoComponent } from './memo/memo.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BoardComponent,
     FormComponent,
-    MemoComponent
+    MemoComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,12 @@ import { MemoComponent } from './memo/memo.component';
     FormsModule,
     AppRoutingModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatListModule,
+    // MatDrawerContainer,
+    MatNativeDateModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
