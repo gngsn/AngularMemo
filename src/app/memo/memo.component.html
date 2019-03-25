@@ -1,17 +1,15 @@
 <div class="board">
-
-  <div *ngFor="let memo of memos" class="container">
-    <!--<ng-container [@createMemo]="animateMemo?'initial':'final'">-->
-      <!--<button (click)="isClick = !isClick">click!</button>-->
+  <div *ngFor="let memo of memos;" class="container">
+    <ng-container [@myMemo]="createAnimation() === memo.id? 'initial':'final'">
       <div class="memo">
         <div class="form">
-          <p>{{memo.userName }} 님의 글 </p>
+          <p>{{memo.userName}} 님의 글 </p>
           <small> {{memo.created | date:'short' }}</small>
         </div>
         <p> {{memo.content}}</p>
       </div>
       <p class="edit" (click)="onToggle(memo.id)">✎</p>
       <p class="remove" (click)="onRemove(memo.id)">✘</p>
-    <!--</ng-container>-->
+    </ng-container>
   </div>
 </div>

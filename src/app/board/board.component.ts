@@ -10,7 +10,6 @@ export class BoardComponent implements OnInit {
   title = 'AngularMemo';
   constructor() {
   }
-
   ngOnInit() {
   }
 }

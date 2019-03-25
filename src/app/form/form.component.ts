@@ -5,7 +5,6 @@ import {MemoService} from '../memo.service';
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
-  animations: [],
 })
 export class FormComponent implements OnInit {
   @Input() inputMemo: string;
@@ -13,11 +12,9 @@ export class FormComponent implements OnInit {
   constructor(private memoService: MemoService) { }
   ngOnInit() {
   }
-  onCreate(input: string ): void {
-    if (this.inputMemo ) {
-      this.memoService
-        .onCreate(this.inputMemo)
-        .subscribe(newId => this.newId = newId);
+  onCreate(): void {
+    if ( this.inputMemo ) {
+      this.memoService.onCreate(this.inputMemo).subscribe(newId => this.newId = newId);
       this.inputMemo = '';
     }
   }

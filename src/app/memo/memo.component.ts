@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Memo} from '../../memo';
 import {MemoService} from '../memo.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {MEMOS} from '../../memo-list';
 
 @Component({
   selector: 'app-memo',
@@ -10,7 +11,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   animations: [
     trigger('myMemo', [
       state('initial', style({
-        backgroundColor: 'white',
+        backgroundColor: '#ffe7c1',
       })),
       state('final', style({
         backgroundColor: '#ffe7c1',
@@ -23,25 +24,33 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
         transform: 'translateX(-10%)',
       })),
       state('final', style({
-        transform: 'translateX(0%)',
+        transform: 'translateX(-10%)',
       })),
-      transition('final=>initial', animate('500ms cubic-bezier(0.64, 0.57, 0.73, 1.53)')),
-      transition('initial=>final', animate('500ms cubic-bezier(0.64, 0.57, 0.67, 1.53)'))
+      transition('*=>initial', animate('500ms cubic-bezier(0.64, 0.57, 0.73, 1.53)')),
+      transition('*=>final', animate('500ms cubic-bezier(0.64, 0.57, 0.67, 1.53)'))
     ]),
-  ]
+  ],
 })
 export class MemoComponent implements OnInit {
   memos: Memo[];
+
   constructor(private memoService: MemoService) { }
 
   ngOnInit() {
     this.getMemos();
+    console.log(MEMOS);
   }
+
+  createAnimation() {
+    return this.memoService.getNewId();
+  }
+
   getMemos(): void {
     this.memoService
       .getMemos()
       .subscribe(memos => this.memos = memos);
   }
+
   onRemove(selectedMemo: number): void {
     // this.memos = this.memoService.onRemove();
     // let idx = this.memos.indexOf(id);
