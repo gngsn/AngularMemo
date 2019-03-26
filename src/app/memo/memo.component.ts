@@ -7,7 +7,7 @@ import {MEMOS} from '../../memo-list';
 @Component({
   selector: 'app-memo',
   templateUrl: './memo.component.html',
-  styleUrls: ['./memo.component.css'],
+  styleUrls: ['./memo.component.scss'],
   animations: [
     trigger('myMemo', [
       state('initial', style({
@@ -33,6 +33,10 @@ import {MEMOS} from '../../memo-list';
 })
 export class MemoComponent implements OnInit {
   memos: Memo[];
+  // rand = Math.random() / 4;
+  //
+  // heightList = ['15rem', '18rem', '20rem', '13rem'];
+  // randomHeight = this.heightList[this.rand];
 
   constructor(private memoService: MemoService) { }
 

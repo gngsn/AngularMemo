@@ -1,0 +1,50 @@
+//@mixin randomHeight{
+//  $height: 10+random(4)*4 + rem;
+//  height: $height;
+//}
+
+@for $i from 0 through 20 {
+  .memo-container {
+    &:nth-child(#{$i}){
+      height: 10 + random(15) + rem;
+    }
+  }
+}
+
+.memo-container {
+  //@include randomHeight;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+  grid-auto-rows: 200px;
+  //width: 16rem;
+  border: 1px rgba(128, 128, 128, 0.32) solid;
+  border-radius: 20px;
+  float: left;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex: 1;
+  flex-direction: column;
+}
+p {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.name{
+  border-bottom: 1px rgba(128, 128, 128, 0.32) solid;
+  height: 6rem;
+}
+
+.edit {
+  font-size: 2rem;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.remove {
+  @extend .edit;
+}
+

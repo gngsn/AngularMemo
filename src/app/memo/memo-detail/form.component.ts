@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {MemoService} from '../memo.service';
+import {MemoService} from '../../memo.service';
 
 @Component({
   selector: 'app-form',

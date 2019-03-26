@@ -1,0 +1,50 @@
+/*@import '@angular/material/prebuilt-themes/deeppurple-amber.css';*/
+
+//$desktop-large-size: "(min-width: 1920px)";
+//$desktop-medium-size: "(min-width: 1024px) and(max-width: 1919px)";
+//$desktop-small-size: "(min-width: 768px) and (max-width: 1023px)";
+//$tablet-size: "(min-width: 425px) and (max-width: 767px)";
+//$mobile-size: "(max-width: 424px)";
+
+$nav-width:18rem;
+$content-background: #f4f4f4;
+
+
+@media (max-width: 899px) {
+  .memo-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav {
+    position: fixed;
+    width: 100%;
+    height: 17rem;
+  }
+  .content {
+    padding: 1rem;
+    background: $content-background;
+    float: bottom;
+    margin-top: 7rem;
+    padding-top: 4rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .memo-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .nav {
+    position: fixed;
+    flex: 1;
+    width: $nav-width;
+    height: 100%;
+  }
+  .content {
+    padding: 1rem;
+    background: $content-background;
+    flex: 2;
+    margin-left: $nav-width;
+    float: right;
+  }
+}

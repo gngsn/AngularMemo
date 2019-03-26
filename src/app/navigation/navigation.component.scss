@@ -1,0 +1,82 @@
+$title-font: "NanumSquareOTF ExtraBold";
+@media (min-width: 900px) {
+  .nav-container {
+    padding: 1rem;
+    border: silver 1px;
+    background-color: #161616;
+    height: 100%;
+  }
+  .nav-title-container {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+  .nav-title {
+    font-family: $title-font;
+    font-size: 3rem;
+    color: aliceblue;
+    text-align: center;
+  }
+  .nav-sub-title {
+    font-family: $title-font;
+    font-size: 1rem;
+    color: aliceblue;
+    text-align: center;
+  }
+  .nav-list {
+    font-family: NanumSquareOTF;
+    font-size: 1rem;
+    color: aliceblue;
+    text-align: center;
+    border-top: 1px solid rgba(240, 248, 255, 0.53);
+    padding: 2rem;
+    &:hover {
+      background-color: #060606;
+      color: lightcoral;
+    }
+  }
+  .nav-min-size {
+    visibility: hidden;
+  }
+  .nav-list-min-container {
+    visibility: hidden;
+  }
+
+}
+
+@media (max-width: 899px) {
+  .nav-title-container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .nav-title {
+    font-family: $title-font;
+    font-size: 3rem;
+    color: aliceblue;
+    text-align: center;
+  }
+
+  .nav-min-list {
+    font-family: NanumSquareOTF;
+    font-size: 1rem;
+    color: aliceblue;
+    text-align: center;
+    border-top: 1px solid rgba(240, 248, 255, 0.53);
+    padding: 2rem;
+    &:hover {
+      background-color: #060606;
+      color: lightcoral;
+    }
+  }
+
+  .nav-sub-title {
+    font-family: $title-font;
+    font-size: 1rem;
+    color: aliceblue;
+    text-align: center;
+  }
+  .nav-list-container {
+    visibility: hidden;
+    font-size: 0px;
+  }
+}

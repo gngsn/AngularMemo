@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.css']
+  styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-  showFiller = false;
-  constructor() { }
+  showList = false;
+  constructor() {
+  }
 
   ngOnInit() {
+    // this.getWidth();
   }
+
+  // getWidth() {
+  //   console.log(screenWidth + '  타입은  ' + typeof(screenWidth));
+  // }
 
 }
