@@ -1,22 +1,25 @@
 <mat-drawer-container class="nav-container">
   <div class="nav-title-container">
-    <div class="nav-title"> GNGSN </div>
+    <div class="nav-title"> GNGSN</div>
     <div class="nav-sub-title"> Angular too hard</div>
   </div>
-    <mat-list class="nav-list-container">
-      <div class="nav-list" routerLink="/"> about</div>
-      <div class="nav-list" routerLink="/memos"> memo</div>
-      <div class="nav-list" routerLink="/posts"> develop</div>
-      <div class="nav-list" style="border-bottom: 1px solid rgba(240, 248, 255, 0.53)" routerLink="/memos"> portpolio</div>
-    </mat-list>
+
+  <mat-list class="nav-list-container">
+    <div class="nav-list" routerLink="/"> about</div>
+    <div class="nav-list" routerLink="/memos"> memo</div>
+    <div class="nav-list" routerLink="/posts"> develop</div>
+    <div class="nav-list" style="border-bottom: 1px solid rgba(240, 248, 255, 0.53)" routerLink="/d3"> d3.js</div>
+  </mat-list>
 
   <div class="nav-min-size">
-    <img src="assets/images/twotone-menu-24px.svg" alt="h"  (click)="showList = !showList" >
+    <img src="assets/images/twotone-menu-24px.svg" alt="h" (click)="showList = !showList">
   </div>
   <mat-list *ngIf="showList" (click)="showList = false" class="nav-list-min-container">
     <div class="nav-min-list" routerLink="/"> about</div>
     <div class="nav-min-list" routerLink="/memos"> memo</div>
     <div class="nav-min-list" routerLink="/posts"> develop</div>
-    <div class="nav-min-list" style="border-bottom: 1px solid rgba(240, 248, 255, 0.53)" routerLink="/memos"> portpolio</div>
+    <div class="nav-min-list" style="border-bottom: 1px solid rgba(240, 248, 255, 0.53)" routerLink="/memos">
+      portpolio
+    </div>
   </mat-list>
 </mat-drawer-container>

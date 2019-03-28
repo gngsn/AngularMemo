@@ -1,15 +1,23 @@
 <div class="board">
   <div class="memo-container" *ngFor="let memo of memos;">
-      <div class="name">
-        <p><strong>{{memo.userName}}</strong></p>
+    <div class="info">
+      <div class="name" style="flex:1">
+        <p>
+          <strong>{{memo.userName}}</strong>
+        </p>
         <p>
           <small> {{memo.created | date:'short' }} </small>
         </p>
       </div>
-      <div class="content">
-        <p> {{memo.content}}</p>
+      <div class="edit-container">
+        <div class="edit" (click)="onToggle(memo.id)">✎</div>
+        <div class="remove" (click)="onRemove(memo.id)">✘</div>
       </div>
-      <!--<p class="edit" (click)="onToggle(memo.id)">✎</p>-->
-      <!--<p class="remove" (click)="onRemove(memo.id)">✘</p>-->
+    </div>
+
+    <div class="content">
+      <p> {{memo.content}}</p>
+    </div>
   </div>
 </div>
+
