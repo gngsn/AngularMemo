@@ -29,6 +29,13 @@
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },
+  "devServer": {
+    "compress": true,
+    "port": "8080",
+    "allowedHosts": [
+      "hci.expertly.info"
+    ]
+  },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.13.0",
     "@angular/cli": "~7.3.6",
