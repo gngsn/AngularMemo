@@ -4,6 +4,7 @@ import {MemoService} from '../memo.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MEMOS} from '../../memo-list';
 
+
 @Component({
   selector: 'app-memo',
   templateUrl: './memo.component.html',

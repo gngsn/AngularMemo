@@ -13,7 +13,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MemoComponent } from './memo/memo.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { PostComponent } from './post/post.component';
-import { D3Component } from './d3/d3.component';
+import { D3ChartComponent } from './d3-chart/d3-chart.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { D3Component } from './d3/d3.component';
     MemoComponent,
     NavigationComponent,
     PostComponent,
-    D3Component,
+    D3ChartComponent,
   ],
   imports: [
     BrowserModule,
