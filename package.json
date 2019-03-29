@@ -2,6 +2,7 @@
   "name": "angular-memo",
   "version": "0.0.0",
   "scripts": {
+    "dev": "webpack-dev-server --inline --progress --host 0.0.0.0 --disableHostCheck true --config build/webpack.dev.conf.js",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
