@@ -1,16 +1,19 @@
 .board {
-  margin: auto;
-  background: white;
+
+  padding: 1rem;
 }
 
 .memo-container {
   float: left;
-  width: 16rem;
+  width: 18rem;
   height: 16rem;
   border: 1px rgba(128, 128, 128, 0.32) solid;
   border-radius: 20px;
   margin: 1.5rem;
   background: white;
+  &:hover {
+    background-color: #f0c6d3;
+  }
 }
 
 p {

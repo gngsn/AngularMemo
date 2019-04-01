@@ -9,28 +9,28 @@ import {MEMOS} from '../../memo-list';
   selector: 'app-memo',
   templateUrl: './memo.component.html',
   styleUrls: ['./memo.component.scss'],
-  animations: [
-    trigger('myMemo', [
-      state('initial', style({
-        backgroundColor: '#ffe7c1',
-      })),
-      state('final', style({
-        backgroundColor: '#ffe7c1',
-      })),
-      transition('final=>initial', animate('1000ms')),
-      transition('initial=>final', animate('1500ms'))
-    ]),
-    trigger('createMemo', [
-      state('initial', style({
-        transform: 'translateX(-10%)',
-      })),
-      state('final', style({
-        transform: 'translateX(-10%)',
-      })),
-      transition('*=>initial', animate('500ms cubic-bezier(0.64, 0.57, 0.73, 1.53)')),
-      transition('*=>final', animate('500ms cubic-bezier(0.64, 0.57, 0.67, 1.53)'))
-    ]),
-  ],
+  // animations: [
+  //   trigger('myMemo', [
+  //     state('initial', style({
+  //       backgroundColor: '#ffe7c1',
+  //     })),
+  //     state('final', style({
+  //       backgroundColor: '#ffe7c1',
+  //     })),
+  //     transition('final=>initial', animate('1000ms')),
+  //     transition('initial=>final', animate('1500ms'))
+  //   ]),
+  //   trigger('createMemo', [
+  //     state('initial', style({
+  //       transform: 'translateX(-10%)',
+  //     })),
+  //     state('final', style({
+  //       transform: 'translateX(-10%)',
+  //     })),
+  //     transition('*=>initial', animate('500ms cubic-bezier(0.64, 0.57, 0.73, 1.53)')),
+  //     transition('*=>final', animate('500ms cubic-bezier(0.64, 0.57, 0.67, 1.53)'))
+  //   ]),
+  // ],
 })
 export class MemoComponent implements OnInit {
   memos: Memo[];
@@ -45,7 +45,6 @@ export class MemoComponent implements OnInit {
     this.getMemos();
     console.log(MEMOS);
   }
-
   createAnimation() {
     return this.memoService.getNewId();
   }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import * as d3 from 'd3';
 
 
@@ -6,11 +6,15 @@ export interface IData {
   letter: string;
   frequency: number;
 }
-
+/*
+ * encapsulation ViewEncapsulation.None 을 적어주어야지 CSS 적용됨.
+ * 쉐도우 돔을 꺼버리는 역할.
+ */
 @Component({
   selector: 'app-d3-chart',
   templateUrl: './d3-chart.component.html',
-  styleUrls: ['./d3-chart.component.css']
+  styleUrls: ['./d3-chart.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class D3ChartComponent implements OnInit {
 
@@ -25,7 +29,7 @@ export class D3ChartComponent implements OnInit {
     */
 
     const svg = d3.select('#bar-chart'),
-      margin = {top: 80, right: 20, bottom: 30, left: 100},
+      margin = {top: 80, right: 20, bottom: 30, left: 30},
       width = +svg.attr('width') - margin.left - margin.right,
       height = +svg.attr('height') - margin.top - margin.bottom;
 
@@ -34,7 +38,7 @@ export class D3ChartComponent implements OnInit {
       y = d3.scaleLinear().rangeRound([height, 0]);
 
     // g 라는 이름을 가진 태그를 하나 만들어 지정해준 크기만큼 translate 한다.
-    var g = svg.append('g')
+    const g = svg.append('g')
       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
     // tab-separated values
@@ -51,12 +55,12 @@ export class D3ChartComponent implements OnInit {
           return d.frequency;
         })]);
         g.append('g')
-          .style('class', 'axis axis--x')
+          .attr('class', 'axis axis--x')
           .attr('transform', 'translate(0,' + height + ')')
           .call(d3.axisBottom(x));
 
         g.append('g')
-          .attr('class', 'value')
+          .attr('class', 'axis axis--y')
           .call(d3.axisLeft(y).ticks(10, '%'))
           .append('text')
           .attr('transform', 'rotate(-90)')
@@ -68,8 +72,7 @@ export class D3ChartComponent implements OnInit {
         g.selectAll('.bar')
           .data(data)
           .enter().append('rect')
-          .style('fill', 'burlywood')
-          .style('class', 'bar')
+          .attr('class', 'bar')
           .attr('x', function (d: { letter: string, frequency: number }) {
             return x(d.letter);
           })

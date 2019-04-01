@@ -23,6 +23,7 @@ $content-background: #f4f4f4;
   .content {
     padding: 1rem;
     background: $content-background;
+    flex: 2;
     float: bottom;
     margin-top: 7rem;
     padding-top: 4rem;
@@ -41,7 +42,6 @@ $content-background: #f4f4f4;
     height: 100%;
   }
   .content {
-    padding: 1rem;
     background: $content-background;
     flex: 2;
     margin-left: $nav-width;

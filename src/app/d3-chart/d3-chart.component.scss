@@ -1,0 +1,25 @@
+//.axis {
+//  fill: #dea6ff;
+//}
+
+.tick {
+  fill: #dea6ff;
+  font-family: NanumSquareOTF;
+  font-size:13px;
+}
+
+.axis--x {
+  display: none;
+}
+
+.title {
+  text-align: center;
+}
+.bar {
+  fill: steelblue;
+}
+
+.content {
+  height: 1000px;
+  margin: auto;
+}

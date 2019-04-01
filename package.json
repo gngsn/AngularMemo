@@ -63,12 +63,12 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gngsn/AngularMemo.git"
+    "url": "git+https://github.com/gngsn/angular-blog.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gngsn/AngularMemo/issues"
+    "url": "https://github.com/gngsn/angular-blog/issues"
   },
-  "homepage": "https://github.com/gngsn/AngularMemo#readme"
+  "homepage": "https://github.com/gngsn/angular-blog#readme"
 }

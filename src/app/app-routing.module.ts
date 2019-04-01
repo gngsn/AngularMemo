@@ -8,6 +8,7 @@ import {D3ChartComponent} from './d3-chart/d3-chart.component';
 const routes: Routes = [
   { path: 'memos', component: BoardComponent },
   { path: 'posts', component: PostComponent },
+  { path: 'post/:memoId', component: PostComponent },
   { path: 'd3', component: D3ChartComponent}
   // { path: 'memos/:id', component: MemoDetailCompo}
 ];

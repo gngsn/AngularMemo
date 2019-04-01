@@ -14,7 +14,6 @@ export class MemoService {
 
   lastId: number;
 
-  // isCreate = false;
   getMemos(): Observable<Memo[]> {
     return of(MEMOS);
   }
