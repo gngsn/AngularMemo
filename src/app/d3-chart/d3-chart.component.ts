@@ -14,6 +14,7 @@ export interface IData {
 })
 export class D3ChartComponent implements OnInit {
 
+  title = 'D3 with angular';
   constructor() {
   }
 
@@ -24,7 +25,7 @@ export class D3ChartComponent implements OnInit {
     */
 
     const svg = d3.select('#bar-chart'),
-      margin = {top: 20, right: 20, bottom: 30, left: 40},
+      margin = {top: 80, right: 20, bottom: 30, left: 100},
       width = +svg.attr('width') - margin.left - margin.right,
       height = +svg.attr('height') - margin.top - margin.bottom;
 
@@ -50,12 +51,12 @@ export class D3ChartComponent implements OnInit {
           return d.frequency;
         })]);
         g.append('g')
-          // .attr('class', 'axis axis--x')
+          .style('class', 'axis axis--x')
           .attr('transform', 'translate(0,' + height + ')')
           .call(d3.axisBottom(x));
 
         g.append('g')
-          // .attr('class', 'axis axis--y')
+          .attr('class', 'value')
           .call(d3.axisLeft(y).ticks(10, '%'))
           .append('text')
           .attr('transform', 'rotate(-90)')
@@ -67,7 +68,8 @@ export class D3ChartComponent implements OnInit {
         g.selectAll('.bar')
           .data(data)
           .enter().append('rect')
-          .attr('class', 'bar')
+          .style('fill', 'burlywood')
+          .style('class', 'bar')
           .attr('x', function (d: { letter: string, frequency: number }) {
             return x(d.letter);
           })
