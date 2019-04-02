@@ -1,14 +1,14 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {Memo} from '../../memo';
-import {MemoService} from '../memo.service';
+import {Memo} from '../../../memo';
+import {MemoService} from './memo.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import {MEMOS} from '../../memo-list';
+import {MEMOS} from '../../../memo-list';
 
 
 @Component({
   selector: 'app-memo',
   templateUrl: './memo.component.html',
-  styleUrls: ['./memo.component.scss'],
+  styleUrls: ['../../../assets/css/memo.component.scss'],
   // animations: [
   //   trigger('myMemo', [
   //     state('initial', style({

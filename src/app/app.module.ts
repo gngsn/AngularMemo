@@ -5,21 +5,19 @@ import { MatNativeDateModule, MatSidenavModule, MatListModule, MatToolbarModule 
 
 
 import { AppComponent } from './app.component';
-import { BoardComponent } from './board/board.component';
+import { BoardComponent } from './component/board/board.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormComponent } from './memo/memo-detail/form.component';
 import { AppRoutingModule } from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MemoComponent } from './memo/memo.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { PostComponent } from './post/post.component';
-import { D3ChartComponent } from './d3-chart/d3-chart.component';
+import { MemoComponent } from './component/memo/memo.component';
+import { NavigationComponent } from './shared/navigation/navigation.component';
+import { PostComponent } from './component/post/post.component';
+import { D3ChartComponent } from './component/d3-chart/d3-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BoardComponent,
-    FormComponent,
     MemoComponent,
     NavigationComponent,
     PostComponent,

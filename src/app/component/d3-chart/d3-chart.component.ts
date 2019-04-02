@@ -13,7 +13,7 @@ export interface IData {
 @Component({
   selector: 'app-d3-chart',
   templateUrl: './d3-chart.component.html',
-  styleUrls: ['./d3-chart.component.scss'],
+  styleUrls: ['../../../assets/css/d3-chart.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class D3ChartComponent implements OnInit {

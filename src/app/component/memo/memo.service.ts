@@ -1,9 +1,8 @@
 import {Injectable} from '@angular/core';
-import {MEMOS} from '../memo-list';
+import {MEMOS} from '../../../memo-list';
 
 import {Observable, of} from 'rxjs';
-import {Memo} from '../memo';
-import {MemoComponent} from './memo/memo.component';
+import {Memo} from '../../../memo';
 
 @Injectable({
   providedIn: 'root'
