@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MemoService} from '../memo/memo.service';
+import {BoardService} from './board.service';
+import {MatDialog, MatDialogRef} from '@angular/material';
 
 
 @Component({
@@ -12,7 +13,11 @@ export class BoardComponent implements OnInit {
   @Input() inputMemo: string;
   newId: number;
 
-  constructor(private memoService: MemoService) {
+  constructor(private boardService: BoardService,
+              public dialog: MatDialog
+              // public dialogRef: MatDialogRef<BoardComponent>,
+              // @Inject(MAT_DIALOG_DATA) public data: DialogData
+  ) {
   }
 
   ngOnInit() {
@@ -20,7 +25,7 @@ export class BoardComponent implements OnInit {
 
   onCreate(): void {
     if (this.inputMemo) {
-      this.memoService.onCreate(this.inputMemo).subscribe(newId => this.newId = newId);
+      this.boardService.onCreate(this.inputMemo).subscribe(newId => this.newId = newId);
       this.inputMemo = '';
     }
   }

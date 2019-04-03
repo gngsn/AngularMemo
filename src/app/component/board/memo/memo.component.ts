@@ -1,14 +1,14 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {Memo} from '../../../memo';
-import {MemoService} from './memo.service';
+import {Memo} from '../../../../memo';
+import {BoardService} from '../board.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import {MEMOS} from '../../../memo-list';
+import {MEMOS} from '../../../../memo-list';
 
 
 @Component({
   selector: 'app-memo',
   templateUrl: './memo.component.html',
-  styleUrls: ['../../../assets/css/memo.component.scss'],
+  styleUrls: ['../../../../assets/css/memo.component.scss'],
   // animations: [
   //   trigger('myMemo', [
   //     state('initial', style({
@@ -34,34 +34,34 @@ import {MEMOS} from '../../../memo-list';
 })
 export class MemoComponent implements OnInit {
   memos: Memo[];
-  // rand = Math.random() / 4;
-  //
-  // heightList = ['15rem', '18rem', '20rem', '13rem'];
-  // randomHeight = this.heightList[this.rand];
-
-  constructor(private memoService: MemoService) { }
+  constructor(private boardService: BoardService) { }
+  openDetail(memo: Memo) {
+    this.boardService.openDetail(memo.id);
+  }
 
   ngOnInit() {
     this.getMemos();
     console.log(MEMOS);
   }
   createAnimation() {
-    return this.memoService.getNewId();
+    return this.boardService.getNewId();
   }
 
   getMemos(): void {
-    this.memoService
+    this.boardService
       .getMemos()
       .subscribe(memos => this.memos = memos);
   }
 
   onRemove(selectedMemo: number): void {
-    // this.memos = this.memoService.onRemove();
+    // this.memos = this.boardService.onRemove();
     // let idx = this.memos.indexOf(id);
   }
 
   onToggle(id: number): void {
-    this.memoService.onToggle(id);
+    this.boardService.onToggle(id);
   }
+
+
 
 }

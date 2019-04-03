@@ -1,6 +1,6 @@
 <div class="board">
 
-  <div class="memo-container" *ngFor="let memo of memos" >
+  <a class="memo-container" *ngFor="let memo of memos" routerLink="/memo/{{memo.id}}">
   <!--<div data-ng-repeat="memo in memos">-->
     <div class="info">
       <div class="name">
@@ -20,6 +20,6 @@
     <div class="content">
       <p> {{memo.content}}</p>
     </div>
-  </div>
+  </a>
 </div>
 
