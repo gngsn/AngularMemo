@@ -15,6 +15,7 @@ import { PostComponent } from './component/post/post.component';
 import { D3ChartComponent } from './component/d3-chart/d3-chart.component';
 import { MemoDetailComponent } from './component/board/memo-detail/memo-detail.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

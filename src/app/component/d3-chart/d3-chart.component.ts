@@ -29,7 +29,7 @@ export class D3ChartComponent implements OnInit {
     */
 
     const svg = d3.select('#bar-chart'),
-      margin = {top: 80, right: 20, bottom: 30, left: 30},
+      margin = {top: 80, right: 20, bottom: 30, left: 60},
       width = +svg.attr('width') - margin.left - margin.right,
       height = +svg.attr('height') - margin.top - margin.bottom;
 
@@ -42,16 +42,16 @@ export class D3ChartComponent implements OnInit {
       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
     // tab-separated values
-    d3.tsv('./assets/data.tsv').then(function (d: any) {
+    d3.tsv('./assets/data.tsv').then(function(d: any) {
       // d.frequency = +d.frequency;
       return d;
     }).then(
-      function (data) {
+      function(data) {
         // console.log(data);
-        x.domain(data.map(function (d: { letter: string, frequency: number }) {
+        x.domain(data.map(function(d: { letter: string, frequency: number }) {
           return d.letter;
         }));
-        y.domain([0, d3.max(data, function (d: { letter: string, frequency: number }) {
+        y.domain([0, d3.max(data, function(d: { letter: string, frequency: number }) {
           return d.frequency;
         })]);
         g.append('g')
@@ -73,17 +73,16 @@ export class D3ChartComponent implements OnInit {
           .data(data)
           .enter().append('rect')
           .attr('class', 'bar')
-          .attr('x', function (d: { letter: string, frequency: number }) {
+          .attr('x', function(d: { letter: string, frequency: number }) {
             return x(d.letter);
           })
-          .attr('y', function (d: { letter: string, frequency: number }) {
+          .attr('y', function(d: { letter: string, frequency: number }) {
             return y(d.frequency);
           })
           .attr('width', x.bandwidth())
-          .attr('height', function (d: { letter: string, frequency: number }) {
+          .attr('height', function(d: { letter: string, frequency: number }) {
             return height - y(d.frequency);
           });
       });
   }
-
 }

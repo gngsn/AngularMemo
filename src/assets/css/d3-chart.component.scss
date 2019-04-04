@@ -17,6 +17,9 @@
 }
 .bar {
   fill: steelblue;
+  &:hover {
+    fill: #3b6790;
+  }
 }
 
 .content {

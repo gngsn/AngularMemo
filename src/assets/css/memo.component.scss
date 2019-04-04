@@ -2,6 +2,21 @@
   padding: 1rem;
 }
 
+.input {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  //border-bottom: dimgray solid 2px;
+  margin-left: 1rem;
+  .memo-container {
+    &:hover {
+      background-color: white;
+    }
+  }
+}
+
+
 .memo-container {
   float: left;
   width: 18rem;
@@ -13,7 +28,13 @@
   &:hover {
     background-color: #f0a09f;
   }
+  text-decoration: none;
 }
+//
+//a:link { color: red; text-decoration: none;}
+//a:visited { color: black; text-decoration: none;}
+//a:hover { color: blue; text-decoration: underline;}
+
 
 p {
   margin-top: 1rem;

@@ -1,8 +1,13 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Memo} from '../../../../memo';
 import {BoardService} from '../board.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MEMOS} from '../../../../memo-list';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {Subject} from 'rxjs';
+import {ActivatedRoute, Router} from '@angular/router';
+import {takeUntil} from 'rxjs/operators';
+import {MemoDetailComponent} from '../memo-detail/memo-detail.component';
 
 
 @Component({
@@ -33,10 +38,17 @@ import {MEMOS} from '../../../../memo-list';
   // ],
 })
 export class MemoComponent implements OnInit {
+  @Input() editValue: string;
+  editMemo = -1;
   memos: Memo[];
-  constructor(private boardService: BoardService) { }
+  constructor(private boardService: BoardService,
+              private modalService: NgbModal) { }
   openDetail(memo: Memo) {
     this.boardService.openDetail(memo.id);
+  }
+
+  openModal(id: string) {
+    this.modalService.open(id);
   }
 
   ngOnInit() {
@@ -54,14 +66,19 @@ export class MemoComponent implements OnInit {
   }
 
   onRemove(selectedMemo: number): void {
-    // this.memos = this.boardService.onRemove();
+    this.memos = this.boardService.onRemove(selectedMemo);
     // let idx = this.memos.indexOf(id);
   }
-
   onToggle(id: number): void {
-    this.boardService.onToggle(id);
+    this.editMemo = id;
+    this.editValue = this.boardService.setInputValue(id);
+    console.log(this.editMemo);
   }
-
-
-
+  onEdit(id: number): void {
+    this.memos = this.boardService.onEdit(id, this.editValue);
+    this.editMemo = -1;
+  }
 }
+
+
+
