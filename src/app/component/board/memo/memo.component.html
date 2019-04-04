@@ -1,22 +1,19 @@
-<div class="board">
-
+<div>
   <a class="memo-container" *ngFor="let memo of memos">
-    <!--<div data-ng-repeat="memo in memos">-->
+
     <div class="info">
       <div class="name">
-        <p>
-          <strong>{{memo.userName}}</strong>
-        </p>
-        <p>
-          <small> {{memo.created | date:'short' }} </small>
-        </p>
+        <p><strong>{{memo.userName}}</strong></p>
+        <p><small> {{memo.created | date:'short' }} </small></p>
       </div>
+
       <div *ngIf="editMemo!=memo.id">
         <div class="edit-container">
           <div class="edit" (click)="onToggle(memo.id)">✎</div>
           <div class="remove" (click)="onRemove(memo.id)">✘</div>
         </div>
       </div>
+
       <div *ngIf="editMemo==memo.id">
         <div class="edit" (click)="onEdit(memo.id)">완료</div>
       </div>
@@ -24,13 +21,13 @@
 
 
     <div *ngIf="editMemo!=memo.id" routerLink="/memo/{{memo.id}}">
-      <div class="content">
+      <div class="memo-content">
         <p> {{memo.content}}</p>
       </div>
     </div>
 
     <div *ngIf="editMemo==memo.id">
-      <input id="edit" [(ngModel)]="editValue" class="input" [required]="required" >
+      <input class="edit-input" id="edit" [(ngModel)]="editValue"  [required]="required" >
     </div>
 
   </a>

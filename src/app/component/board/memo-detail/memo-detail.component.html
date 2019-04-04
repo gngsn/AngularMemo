@@ -1,4 +1,49 @@
-<div id="modal" *ngIf="seleted">
-  <h1>{{seleted.userName}}님의 메모</h1>
-  <h3> {{seleted.content}}</h3>
+<div class="detail-container" *ngIf="seleted">
+  <div class="title">
+    <div>{{seleted.userName}}님의 메모</div>
+  </div>
+  <h3 class="content"> {{seleted.content}}</h3>
+</div>
+
+<div class="comment-container">
+
+  <div class="comment">
+    <img class="profile" src="/assets/images/baseline-person-24px.svg">
+    <div class="value">
+      <div class="comment-name">
+        <h4>nickname</h4>
+        <h4>skfwk </h4>
+      </div>
+      <div class="comment-content">
+        Hi, Nice to meet you!
+      </div>
+    </div>
+  </div>
+
+  <div class="comment">
+    <img class="profile" src="/assets/images/baseline-person-24px.svg">
+    <div class="value">
+      <div class="comment-name">
+        <h4>nickname</h4>
+        <h4>skfwk </h4>
+      </div>
+      <div class="comment-content">
+        Hi, Nice to meet you!
+      </div>
+    </div>
+  </div>
+
+  <div class="comment">
+    <img class="profile" src="/assets/images/baseline-person-24px.svg">
+    <div class="value">
+      <div class="comment-name">
+        <h4>nickname</h4>
+        <h4>skfwk </h4>
+      </div>
+      <div class="comment-content">
+        Hi, Nice to meet you!
+      </div>
+    </div>
+  </div>
+
 </div>

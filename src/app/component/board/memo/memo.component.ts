@@ -13,7 +13,7 @@ import {MemoDetailComponent} from '../memo-detail/memo-detail.component';
 @Component({
   selector: 'app-memo',
   templateUrl: './memo.component.html',
-  styleUrls: ['../../../../assets/css/memo.component.scss'],
+  styleUrls: ['../../../../assets/css/board.component.scss'],
   // animations: [
   //   trigger('myMemo', [
   //     state('initial', style({

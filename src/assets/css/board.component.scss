@@ -1,67 +1,187 @@
-.memo-container {
-  padding-top: 1rem;
+@mixin input() {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  margin-left: 1rem;
+}
+
+@mixin button() {
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #434143;
+  color: #e9e9e9;
+}
+.board-container {
+  padding: 2rem;
   margin: auto;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   height: 150%;
   background-color: white;
-}
-
-.title {
-  font-size: 2.5rem;
-  padding: 2rem;
-  text-align: center;
-}
-
-.selected {
-  background-color: #ffe7c1;
-}
-
-* {
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .form-container {
   display: flex;
   flex: 1;
-  padding:0.5rem;
-  margin-bottom: 1rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
 }
 
-.button {
-  border-radius: 10px;
-  font-size: 20px;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  background-color: #f0a09f;
+.title {
+  font-size: 3em;
+  padding: 2rem;
+  text-align: center;
 }
 
 @media (max-width: 899px) {
   .button {
+    @include button();
     padding-left: 5%;
     padding-right: 5%;
-
   }
 }
+
 @media (min-width: 900px) {
   .button {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    @include button();
+    padding: 1rem 3rem;
   }
 }
 
 
 .input {
-  flex: 1;
-  padding: 1rem;
-  font-size: 1rem;
-  border: none;
+  @include input();
   border-bottom: dimgray solid 2px;
-  margin-left: 1rem;
+  margin-right: 2rem;
 }
 
 label {
   flex: 1;
   display: flex;
+}
+
+
+//--------------------------MEMO-----------------------------------------
+
+
+.memo-container {
+  float: left;
+  width: 18rem;
+  height: 16rem;
+  border: 1px rgba(128, 128, 128, 0.32) solid;
+  border-radius: 20px;
+  margin: 1.5rem;
+  background: white;
+  &:hover {
+    background-color: #f0a09f;
+  }
+  text-decoration: none;
+}
+
+.edit-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.edit-input {
+  @include input();
+  width: 14rem;
+  height: 7rem;
+}
+
+p {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+
+.info {
+  display: flex;
+  flex-direction: row;
+}
+
+.name {
+  height: 6rem;
+  width:90%;
+}
+
+.edit {
+  font-size: 15PX;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.remove {
+  @extend .edit;
+}
+
+.memo-content {
+  height: auto;
+  display: inline-block;
+}
+
+//--------------------------MEMO-DETAIL----------------------------------------
+
+@mixin container() {
+  float: left;
+  width: 90%;
+  height: 50%;
+  border: 1px rgba(128, 128, 128, 0.32) solid;
+  border-radius: 20px;
+  margin: 2rem 1rem 1rem 2rem;
+  background: white;
+}
+
+.detail-container {
+  @include container();
+  text-decoration: none;
+  padding: 2rem;
+}
+.comment-container {
+  @include container();
+  padding: 2rem;
+}
+
+.profile {
+  width: 4rem;
+  height: 4rem;
+  border: solid 1px #838888;
+  border-radius: 10px;
+  justify-content: center;
+  margin-right: 2rem;
+}
+
+.content {
+  margin: 2rem;
+  padding: 2rem;
+}
+
+.comment {
+  display: flex;
+  border-bottom: 2px solid #4f4f4f;
+  margin: 1rem 2rem;
+  padding: 1rem;
+  align-items: center;
+  justify-items: baseline;
+}
+
+.comment-name {
+  display: flex;
+  padding: 0;
+  flex-direction: row;
+  width:90%;
+  flex: 0.5;
+}
+
+.value {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+h4 {
+  margin: 6px 1rem;
 }

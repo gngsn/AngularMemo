@@ -11,7 +11,7 @@ $content-background: #f4f4f4;
 
 
 @media (max-width: 899px) {
-  .memo-container {
+  .container {
     display: flex;
     flex-direction: column;
   }
@@ -31,7 +31,7 @@ $content-background: #f4f4f4;
 }
 
 @media (min-width: 900px) {
-  .memo-container {
+  .container {
     display: flex;
     flex-direction: row;
   }

@@ -10,7 +10,7 @@ import {Subject} from 'rxjs';
 @Component({
   selector: 'app-memo-detail',
   templateUrl: './memo-detail.component.html',
-  styleUrls: ['./memo-detail.component.css']
+  styleUrls: ['../../../../assets/css/board.component.scss']
 })
 export class MemoDetailComponent implements OnInit {
   id = -1;

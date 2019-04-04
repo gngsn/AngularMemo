@@ -9,7 +9,7 @@ import {MatDialog, MatDialogRef} from '@angular/material';
   styleUrls: ['../../../assets/css/board.component.scss']
 })
 export class BoardComponent implements OnInit {
-  title = 'angular-blog';
+  title = 'angular-memo';
   @Input() inputMemo: string;
   newId: number;
 
