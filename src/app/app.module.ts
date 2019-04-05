@@ -14,6 +14,7 @@ import { NavigationComponent } from './shared/navigation/navigation.component';
 import { PostComponent } from './component/post/post.component';
 import { D3ChartComponent } from './component/d3-chart/d3-chart.component';
 import { MemoDetailComponent } from './component/board/memo-detail/memo-detail.component';
+import {CircleChartComponent} from './component/d3-chart/circle-chart/circle-chart.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { MemoDetailComponent } from './component/board/memo-detail/memo-detail.c
     PostComponent,
     D3ChartComponent,
     MemoDetailComponent,
+    CircleChartComponent,
   ],
   imports: [
     MatDialogModule,
@@ -36,11 +38,11 @@ import { MemoDetailComponent } from './component/board/memo-detail/memo-detail.c
     BrowserAnimationsModule,
     MatSidenavModule,
     MatListModule,
-    // MatDrawerContainer,
     MatNativeDateModule,
     MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

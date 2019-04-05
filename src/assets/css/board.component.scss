@@ -21,9 +21,17 @@
 
 .form-container {
   display: flex;
-  flex: 1;
+  align-items: center;
+  border: #f4f4f4 solid 2px;
+  background-color: #f4f4f4;
+  border-radius: 40px;
+  width: 90%;
   margin-top: 5rem;
   margin-bottom: 3rem;
+  &:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    outline: none;
+  }
 }
 
 .title {
@@ -47,11 +55,24 @@
   }
 }
 
+.add-icon {
+  margin: 10px 20px;
+  width: 3rem;
+  height: 3rem;
+  flex:1;
+  &:hover {
+
+  }
+}
 
 .input {
   @include input();
-  border-bottom: dimgray solid 2px;
-  margin-right: 2rem;
+  outline: none;
+  flex: 9;
+  //width: 92%;
+  background-color: #f4f4f4;
+  position: relative;
+
 }
 
 label {

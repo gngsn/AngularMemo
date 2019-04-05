@@ -1,11 +1,9 @@
 <div class="board-container">
-    <h1 class="title">{{title}}</h1>
-    <div class="form-container">
-        <label>
-            <input class="input" [(ngModel)]="inputMemo" />
-        </label>
-        <button class="button" (click)="onCreate()">add</button>
-    </div>
-    <app-memo></app-memo>
+  <h1 class="title">{{title}}</h1>
+  <div class="form-container">
+    <input class="input" placeholder="type something!!" [(ngModel)]="inputMemo"/>
+    <span><img class="add-icon" src="assets/baseline-add-24px.svg" (click)="onCreate()"></span>
+  </div>
+  <app-memo></app-memo>
 </div>
 
