@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {BoardService} from './board.service';
-import {MatDialog, MatDialogRef} from '@angular/material';
 
 
 @Component({
@@ -13,10 +12,7 @@ export class BoardComponent implements OnInit {
   @Input() inputMemo: string;
   newId: number;
 
-  constructor(private boardService: BoardService,
-              public dialog: MatDialog
-              // public dialogRef: MatDialogRef<BoardComponent>,
-              // @Inject(MAT_DIALOG_DATA) public data: DialogData
+  constructor(private boardService: BoardService
   ) {
   }
 

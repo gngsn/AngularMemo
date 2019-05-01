@@ -7,6 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
   showList = false;
+  showD3List = false;
   constructor() {
   }
 

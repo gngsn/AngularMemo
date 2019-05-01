@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
-import { MatDialogModule, MatNativeDateModule, MatSidenavModule, MatListModule, MatToolbarModule } from '@angular/material';
+import { MatAccordion, MatExpansionModule, MatNativeDateModule, MatSidenavModule, MatListModule, MatToolbarModule } from '@angular/material';
 
 
 import { AppComponent } from './app.component';
@@ -29,7 +29,6 @@ import {CircleChartComponent} from './component/d3-chart/circle-chart/circle-cha
     CircleChartComponent,
   ],
   imports: [
-    MatDialogModule,
     BrowserModule,
     NgbModule,
     FormsModule,
@@ -38,8 +37,10 @@ import {CircleChartComponent} from './component/d3-chart/circle-chart/circle-cha
     BrowserAnimationsModule,
     MatSidenavModule,
     MatListModule,
+    // MatAccordion,
     MatNativeDateModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
