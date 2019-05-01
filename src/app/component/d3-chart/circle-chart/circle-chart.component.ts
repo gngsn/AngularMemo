@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import {line} from 'd3';
 
 export interface IData {
-  date: Date;
+  date: string;
   close: number;
 }
 
@@ -41,10 +41,6 @@ export class CircleChartComponent implements OnInit {
         return d;
       }).then(
       function(data) {
-        let parseTime = d3.timeParse('%Y-%m-%d');
-        data.forEach(function(d) {
-          d.date = parseTime(d.date);
-        });
         x.domain(data.map(function(d: IData) {
           return d.date;
         }));
@@ -64,12 +60,9 @@ export class CircleChartComponent implements OnInit {
 
         g.append('g')
           .attr('transform', 'translate(0,' + height + ')')
-          .call(d3.axisBottom(x)
-            .tickFormat(function(d) {
-              return d3.timeFormat('%b %d')(d);
-            }))
+          .call(d3.axisBottom(x))
           .selectAll('text')
-          .attr('transform', 'translate(0,25)rotate(-65)');
+          .attr('transform', 'translate(0,40)rotate(-65)');
             // .tickSizeInner(25));
         g.append('g')
           .call(d3.axisLeft(y))
