@@ -43,7 +43,7 @@ export class D3ChartComponent implements OnInit {
 
     // tab-separated values
     d3.tsv('./assets/data.tsv').then(function(d: any) {
-      // d.frequency = +d.frequency;
+      d.frequency = +d.frequency;
       return d;
     }).then(
       function(data) {

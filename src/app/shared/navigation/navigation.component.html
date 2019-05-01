@@ -6,9 +6,8 @@
 
   <mat-list class="nav-list-container">
       <mat-nav-list class="nav-list" routerLink="/"> about</mat-nav-list>
-      <div class="nav-list" routerLink="/memo"> memo</div>
-      <div class="nav-list" routerLink="/posts"> develop</div>
-    <mat-accordion multi="true">
+      <mat-nav-list class="nav-list" routerLink="/memo"> memo</mat-nav-list>
+      <mat-nav-list class="nav-list" routerLink="/posts"> develop</mat-nav-list>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           D3.js
@@ -19,20 +18,26 @@
             d3-circle.js
           </div>
         </mat-nav-list>
-
       </mat-expansion-panel>
-    </mat-accordion>
   </mat-list>
 
   <div class="nav-min-size">
-    <img src="assets/images/twotone-menu-24px.svg" alt="h" (click)="showList = !showList">
+    <img src="assets/images/twotone-menu-24px.svg" (click)="showList = !showList" alt="h">
   </div>
-  <mat-list *ngIf="showList" (click)="showList = false" class="nav-list-min-container">
-    <div class="nav-min-list" routerLink="/"> about</div>
-    <div class="nav-min-list" routerLink="/memo"> memo</div>
-    <div class="nav-min-list" routerLink="/posts"> develop</div>
-    <div class="nav-min-list" style="border-bottom: 1px solid rgba(240, 248, 255, 0.53)" routerLink="/d3">
-      d3.js
-    </div>
+  <mat-list *ngIf="showList" class="nav-list-min-container">
+    <div class="nav-min-list" (click)="showList = !showList" routerLink="/"> about</div>
+    <div class="nav-min-list" (click)="showList = !showList" routerLink="/memo"> memo</div>
+    <div class="nav-min-list" (click)="showList = !showList" routerLink="/posts"> develop</div>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        D3.js
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <div class="nav-min-list" (click)="showList = !showList" routerLink="/d3"> d3.js</div>
+        <div class="nav-min-list" (click)="showList = !showList" style="border-bottom: 1px solid rgba(240, 248, 255, 0.53)" routerLink="/d3/circle">
+          d3-circle.js
+        </div>
+      </mat-nav-list>
+    </mat-expansion-panel>
   </mat-list>
 </mat-drawer-container>
