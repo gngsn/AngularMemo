@@ -1,8 +1,29 @@
+$title-font: "NanumSquareOTF ExtraBold";
+
+
 .container {
   padding-top: 1rem;
   padding-left: 3rem;
   margin: auto;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  height: 100%;
+  height: 200%;
   background-color: white;
+
+}
+
+H1 {
+  font-family: $title-font;
+  font-size: 3rem;
+  color: black;
+  text-align: center;
+}
+
+a {
+  font-family: $title-font;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+ul {
+  padding-top: 2rem;
 }

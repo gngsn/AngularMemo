@@ -1,16 +1,16 @@
 /*@import '@angular/material/prebuilt-themes/deeppurple-amber.css';*/
 
-//$desktop-large-size: "(min-width: 1920px)";
-//$desktop-medium-size: "(min-width: 1024px) and(max-width: 1919px)";
-//$desktop-small-size: "(min-width: 768px) and (max-width: 1023px)";
-//$tablet-size: "(min-width: 425px) and (max-width: 767px)";
-//$mobile-size: "(max-width: 424px)";
+$desktop-large-size: "(min-width: 1920px)";
+$desktop-medium-size: "(min-width: 1024px) and(max-width: 1919px)";
+$desktop-small-size: "(min-width: 768px) and (max-width: 1023px)";
+$tablet-size: "(min-width: 425px) and (max-width: 767px)";
+$mobile-size: 375px;
 
 $nav-width:18rem;
 $content-background: #f4f4f4;
 
 
-@media (max-width: 899px) {
+@media (max-width: $mobile-size) {
   .container {
     display: flex;
     flex-direction: column;
@@ -21,16 +21,17 @@ $content-background: #f4f4f4;
     height: 17rem;
   }
   .content {
-    padding: 1rem;
+    //padding: 1rem;
     background: $content-background;
     flex: 2;
-    float: bottom;
+    //float: bottom;
     margin-top: 7rem;
     padding-top: 4rem;
+    //height: 2048px;
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: $mobile-size) {
   .container {
     display: flex;
     flex-direction: row;
@@ -42,6 +43,7 @@ $content-background: #f4f4f4;
     height: 100%;
   }
   .content {
+    //height: 100%;
     background: $content-background;
     flex: 2;
     margin-left: $nav-width;

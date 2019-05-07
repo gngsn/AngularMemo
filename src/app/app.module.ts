@@ -15,6 +15,7 @@ import { PostComponent } from './component/post/post.component';
 import { D3ChartComponent } from './component/d3-chart/d3-chart.component';
 import { MemoDetailComponent } from './component/board/memo-detail/memo-detail.component';
 import {CircleChartComponent} from './component/d3-chart/circle-chart/circle-chart.component';
+import { MainComponent } from './component/main/main.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import {CircleChartComponent} from './component/d3-chart/circle-chart/circle-cha
     D3ChartComponent,
     MemoDetailComponent,
     CircleChartComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,

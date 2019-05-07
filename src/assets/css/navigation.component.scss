@@ -1,5 +1,7 @@
+$mobile-size: 375px;
+
 $title-font: "NanumSquareOTF ExtraBold";
-@media (min-width: 900px) {
+@media (min-width: $mobile-size) {
   .nav-container {
     padding: 1rem;
     border: silver 1px;
@@ -43,7 +45,7 @@ $title-font: "NanumSquareOTF ExtraBold";
 
 }
 
-@media (max-width: 899px) {
+@media (max-width: $mobile-size) {
   .nav-title-container {
     margin-top: 1rem;
     margin-bottom: 1rem;

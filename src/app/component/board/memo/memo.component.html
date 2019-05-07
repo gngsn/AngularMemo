@@ -20,9 +20,9 @@
     </div>
 
 
-    <div *ngIf="editMemo!=memo.id" routerLink="/memo/{{memo.id}}">
+    <div *ngIf="editMemo!=memo.id" style="outline: none; cursor : pointer" routerLink="/memo/{{memo.id}}">
       <div class="memo-content">
-        <p> {{memo.content}}</p>
+        <p style="height: 12rem"> {{memo.content}}</p>
       </div>
     </div>
 
