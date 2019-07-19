@@ -24,8 +24,6 @@ export class CircleChartComponent implements OnInit {
   ngOnInit(): void {
     const svg = d3.select('#line-chart'),
       margin = {top: 40, right: 0, bottom: 60, left: 50},
-      // width = +svg.attr('width'),
-      // height = +svg.attr('height')
       width = +svg.attr('width') - margin.right ,
       height = +svg.attr('height') - margin.top - margin.bottom;
     // const x = d3.scaleTime().range([margin.left, width - margin.right]);
@@ -34,15 +32,14 @@ export class CircleChartComponent implements OnInit {
     const g = svg.append('g')
       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
-
     // tab-separated values
     d3.csv('./assets/aapl.csv')
       .then(function(d: any) {
         return d;
       }).then(
       function(data) {
-        x.domain(data.map(function(d: IData) {
-          return d.date;
+          x.domain(data.map(function(d: IData) {
+            return d.date;
         }));
         y.domain([250, d3.max(data, function(d: IData) {
           return d.close;
@@ -55,9 +52,6 @@ export class CircleChartComponent implements OnInit {
           .y(function(d: any) {
             return y(d.close);
           });
-
-
-
         g.append('g')
           .attr('transform', 'translate(0,' + height + ')')
           .call(d3.axisBottom(x))
@@ -72,7 +66,6 @@ export class CircleChartComponent implements OnInit {
           .attr('dy', '0.71em')
           .attr('text-anchor', 'end')
           .text('close');
-
         g.append('path')
           .datum(data)
           .attr('fill', 'none')

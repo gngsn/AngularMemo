@@ -16,6 +16,7 @@ import { D3ChartComponent } from './component/d3-chart/d3-chart.component';
 import { MemoDetailComponent } from './component/board/memo-detail/memo-detail.component';
 import {CircleChartComponent} from './component/d3-chart/circle-chart/circle-chart.component';
 import { MainComponent } from './component/main/main.component';
+import { D3ExampleChartComponent } from './component/d3-example-chart/d3-example-chart.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { MainComponent } from './component/main/main.component';
     MemoDetailComponent,
     CircleChartComponent,
     MainComponent,
+    D3ExampleChartComponent,
   ],
   imports: [
     BrowserModule,

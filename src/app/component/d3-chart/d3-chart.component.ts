@@ -7,7 +7,7 @@ export interface IData {
   frequency: number;
 }
 /*
- * encapsulation ViewEncapsulation.None 을 적어주어야지 CSS 적용됨.
+ * encapsulation: ViewEncapsulation.None 을 적어주어야지 CSS 적용됨.
  * 쉐도우 돔을 꺼버리는 역할.
  */
 @Component({
@@ -48,13 +48,9 @@ export class D3ChartComponent implements OnInit {
     }).then(
       function(data) {
         // console.log(data);
-        x.domain(data.map(function(d: { letter: string, frequency: number }) {
-          return d.letter;
-        }));
-        y.domain([0, d3.max(data, function(d: { letter: string, frequency: number }) {
-          return d.frequency;
-        })]);
-        g.append('g')
+        x.domain(data.map(function(d: { letter: string, frequency: number }) {return d.letter; }));
+        y.domain([0, d3.max(data, function(d: { letter: string, frequency: number }) {return d.frequency; })]);
+        g.append('v')
           .attr('class', 'axis axis--x')
           .attr('transform', 'translate(0,' + height + ')')
           .call(d3.axisBottom(x));
