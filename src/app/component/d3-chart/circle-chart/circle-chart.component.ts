@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import * as d3 from 'd3';
-import {line} from 'd3';
+// import {line} from 'd3';
 
 export interface IData {
   date: string;
@@ -31,19 +31,17 @@ export class CircleChartComponent implements OnInit {
     const y = d3.scaleLinear().rangeRound([height, 0]);
     const g = svg.append('g')
       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-
+    var month = -1;
     // tab-separated values
     d3.csv('./assets/aapl.csv')
       .then(function(d: any) {
         return d;
       }).then(
       function(data) {
-          x.domain(data.map(function(d: IData) {
-            return d.date;
+        x.domain(data.map(function(d: IData) {
+          return (d.date);
         }));
-        y.domain([250, d3.max(data, function(d: IData) {
-          return d.close;
-        })]);
+        y.domain([250, d3.max(data, function(d: IData) { return d.close; })]);
 
         const line1 = d3.line()
           .x(function(d: any) {
@@ -52,12 +50,8 @@ export class CircleChartComponent implements OnInit {
           .y(function(d: any) {
             return y(d.close);
           });
-        g.append('g')
-          .attr('transform', 'translate(0,' + height + ')')
-          .call(d3.axisBottom(x))
-          .selectAll('text')
-          .attr('transform', 'translate(0,40)rotate(-65)');
-            // .tickSizeInner(25));
+        const xBottom = d3.axisBottom(x);
+
         g.append('g')
           .call(d3.axisLeft(y))
           .append('text')
@@ -74,6 +68,20 @@ export class CircleChartComponent implements OnInit {
           .attr('stroke-linejoin', 'round')
           .attr('stroke-linecap', 'round')
           .attr('d', line1);
+        g.append('g')
+          .attr('transform', 'translate(0,' + height + ')')
+          .call(xBottom.tickFormat(function(d) {
+            const dateFunc = d3.timeParse('%Y-%m-%d');
+            const fmtFunc = d3.timeFormat('%m/%d');
+            const date = dateFunc(d);
+            if (month !== date.getMonth()) {
+              month = date.getMonth();
+              return fmtFunc(date);
+            }
+          }) )
+          .selectAll('text')
+          .attr('transform', 'translate(0,20)');
+        // .tickSizeInner(25));
       });
   }
 }
